@@ -5,8 +5,7 @@ ENV POSTGRES_PASSWORD=postgres
 
 WORKDIR /scripts
 
-COPY init.sql /docker-entrypoint-initdb.d/
-COPY insert.sql /docker-entrypoint-initdb.d/
+COPY 00_init.sql /docker-entrypoint-initdb.d/
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD [ "postgres" ]
